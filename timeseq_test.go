@@ -20,8 +20,8 @@ func TestTimeSeq(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	size := 10
-	ts := New(size / 2)
+	size := 10000
+	ts := New(size / 7)
 	for i := 0; i < size; i++ {
 		dt := time.Duration(i) * time.Minute
 		if i%2 == 0 {

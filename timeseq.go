@@ -8,6 +8,11 @@ import (
 	"time"
 )
 
+const (
+	// Version is the package version
+	Version = "0.1.0"
+)
+
 // Elem is an element in the sequence
 type Elem struct {
 	Time  time.Time
@@ -64,5 +69,6 @@ func (ts *TimeSeq) Drop(until time.Time) {
 		return (*ts)[i].Time.After(until)
 	}
 	i := sort.Search(len(*ts), fn)
+	// TODO: Create a fresh copy?
 	*ts = (*ts)[i:]
 }
