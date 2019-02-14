@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/golang:1.11
-    working_directory: /timeseq
+    working_directory: /tmp/timeseq
     steps:
       - checkout
       - run: go test -v
